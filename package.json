@@ -1,0 +1,14 @@
+{
+  "name": "boss-company-helper",
+  "version": "0.22.3",
+  "private": true,
+  "type": "module",
+  "description": "Local company history for BOSS Zhipin, requirement r2",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check.js",
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": { "linkedom": "0.18.13" }
+}

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "BOSS 悬浮球测试（无功能）",
+  "version": "0.1.0",
+  "description": "仅显示一个静态悬浮球，用于手动观察页面兼容性。不读取业务内容、不保存数据、不发送请求。",
+  "content_scripts": [
+    {
+      "matches": ["https://www.zhipin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "world": "ISOLATED"
+    }
+  ]
+}

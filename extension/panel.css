@@ -1,0 +1,76 @@
+:root { font-family: "Microsoft YaHei", system-ui, sans-serif; color: #25343a; background: #f5f8f7; font-size: 14px; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 240px; }
+header { padding: 24px 18px 16px; border-bottom: 1px solid #dce7e2; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.eyebrow { color: #216854; font-size: 11px; letter-spacing: .12em; font-weight: 700; }
+h1 { font-size: 20px; line-height: 1.5; margin: 8px 0 4px; }
+h2 { font-size: 14px; margin: 0; }
+p { line-height: 1.6; margin: 8px 0; }
+.muted, small { color: #667978; }
+main { padding: 16px; }
+section { background: white; border: 1px solid #e0e8e4; border-radius: 12px; padding: 14px; margin-bottom: 16px; }
+.section-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.pad-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.page-setting { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: -2px 0 10px; padding-bottom: 9px; border-bottom: 1px solid #edf1ef; }
+.page-setting .switch { white-space: normal; }
+.badge { font-size: 12px; background: #edf2f0; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
+.badge.seen { color: #155f49; background: #e3f4eb; }
+.badge.unknown { color: #795424; background: #fff3df; }
+.history-warning { background: #fff1f2; border-color: #ebbdc2; }
+.history-warning .company, .history-message { color: #8c252f; }
+.history-message { font-weight: 700; }
+.history-date { color: #883944; }
+.badge.historical { color: #8c252f; background: #f9dce0; }
+.badge.contacted { color: #8c252f; background: #f9dce0; font-weight: 700; }
+.badge.possible { color: #795424; background: #fff3df; }
+.possible-warning { background: #fffaf1; border-color: #ecd3a4; }
+.possible-list .row-top { flex-wrap: wrap; }
+.rest-tag { flex-shrink: 0; font-size: 11px; color: #795424; background: #fff3df; border: 1px solid #ecd3a4; padding: 2px 7px; border-radius: 6px; white-space: nowrap; }
+.rest-warn { color: #795424; background: #fff3df; border-radius: 7px; padding: 8px 10px; font-size: 12px; }
+.mark-contacted, .cancel-contacted { flex-shrink: 0; }
+.company { font-weight: 600; font-size: 16px; overflow-wrap: anywhere; }
+button { border: 0; border-radius: 7px; background: #216854; color: white; font: inherit; padding: 9px 12px; cursor: pointer; line-height: 1.5; }
+button:hover { filter: brightness(.94); }
+button:disabled { opacity: .55; cursor: default; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #63b795; outline-offset: 2px; }
+.secondary { color: #216854; background: #edf5f0; margin-bottom: 16px; }
+.text-button { padding: 3px 0; background: transparent; color: #216854; font-size: 12px; }
+#pad-copy { min-height: 34px; padding: 8px 15px; border-radius: 999px; background: #216854; color: white; font-size: 13px; font-weight: 600; line-height: 1.4; white-space: nowrap; }
+.switch { display: inline-flex; align-items: center; gap: 7px; color: #4c635c; font-size: 12px; line-height: 1.4; cursor: pointer; user-select: none; white-space: nowrap; }
+.switch input { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; opacity: 0; }
+.switch-track { position: relative; flex-shrink: 0; width: 34px; height: 20px; border-radius: 999px; background: #c7d8d1; transition: background-color .15s; }
+.switch-track::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: white; box-shadow: 0 1px 2px rgba(0,0,0,.2); transition: transform .15s; }
+.switch input:checked + .switch-track { background: #216854; }
+.switch input:checked + .switch-track::after { transform: translateX(14px); }
+.switch input:focus-visible + .switch-track { outline: 3px solid #63b795; outline-offset: 2px; }
+.pad-setting-status, .page-setting-status { flex-basis: 100%; text-align: right; color: #8b3c2e; font-size: 11px; line-height: 1.5; }
+.pad-setting-status:empty, .page-setting-status:empty { display: none; }
+.mark { width: 100%; margin-top: 12px; }
+input { width: 100%; padding: 10px; font: inherit; border: 1px solid #cbdad3; border-radius: 7px; margin-bottom: 12px; background: white; }
+textarea { display: block; width: 100%; min-width: 0; max-width: 100%; height: 160px; min-height: 80px; max-height: 480px; padding: 10px; font: inherit; line-height: 1.6; border: 1px solid #cbdad3; border-radius: 7px; background: white; resize: vertical; overflow: auto; overflow-wrap: anywhere; white-space: pre-wrap; }
+.pad-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; font-size: 11px; color: #667978; overflow-wrap: anywhere; }
+#pad-copy-status { font-size: 12px; color: #216854; overflow-wrap: anywhere; }
+#pad-copy-status:empty { display: none; }
+#records-toggle { margin-top: 10px; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { padding: 11px 0; border-bottom: 1px solid #edf1ef; }
+li:last-child { border-bottom: 0; }
+.row-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.row-name { overflow-wrap: anywhere; font-weight: 600; }
+.record-date { display: block; font-size: 12px; margin-top: 5px; }
+.undo { flex-shrink: 0; }
+a { color: #216854; text-decoration: none; }
+a:hover { text-decoration: underline; }
+#feedback { padding: 10px 12px; margin-bottom: 12px; border-radius: 7px; background: #e3f4eb; overflow-wrap: anywhere; }
+#feedback.error { color: #8b3c2e; background: #fff0eb; }
+footer { padding: 0 18px 20px; color: #71817c; font-size: 11px; line-height: 1.8; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+[hidden] { display: none !important; }
+.capture-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.capture-export { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.capture-export .text-button { white-space: nowrap; }
+#jobs-state { font-size: 11px; font-weight: 400; color: #60756c; margin-left: 4px; }
+#jobs-count { font-size: 12px; margin-bottom: 6px; }
+.capture-note { font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; margin: 0; color: #536b60; }
+.capture-note.error { color: #8b3c2e; }
+@media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s; } }

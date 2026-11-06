@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "boss助手 · 公司看过记录",
+  "version": "0.22.3",
+  "description": "公司查重与主动记录，常用话术本机保存及复制。仅在 BOSS 直聘工作。",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "sidePanel", "scripting", "webRequest"],
+  "host_permissions": ["https://www.zhipin.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "打开公司记录助手" },
+  "side_panel": { "default_path": "panel.html" },
+  "content_scripts": [{
+    "matches": ["https://www.zhipin.com/*"],
+    "js": ["core/identity.js", "core/rest.js", "core/parser.js", "core/page-state.js", "core/job-parser.js", "core/sound.js", "floating.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://www.zhipin.com/wapi/zpgeek/job/detail.json"
+  }
+}

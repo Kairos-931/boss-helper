@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>boss助手 · 公司记录</title>
+  <link rel="stylesheet" href="panel.css">
+  <script type="module" src="panel.js"></script>
+  <script type="module" src="collector.js"></script>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">BOSS 助手</div>
+    <a href="dashboard.html" target="_blank" class="text-button">打开数据看板</a>
+    <button id="collapse-floating" class="text-button" type="button">收起为悬浮条</button>
+  </header>
+  <main>
+    <section aria-labelledby="page-title">
+      <div class="section-top"><h2 id="page-title">当前页面</h2><button id="reconnect" class="text-button">重新读取</button><span id="page-badge" class="badge">识别中</span></div>
+      <div class="page-setting">
+        <label class="switch" title="开启后，点击搜索结果中的职位条目时，若可唯一识别公司，自动记为已查看">
+          <span>点击职位条目即记看过</span>
+          <input id="list-click-view" type="checkbox" role="switch" aria-label="点击职位条目即记看过">
+          <span class="switch-track" aria-hidden="true"></span>
+        </label>
+        <span id="list-click-view-status" class="page-setting-status" role="status" aria-live="polite"></span>
+      </div>
+      <div id="page-content" aria-live="polite"><p class="muted">正在读取当前 BOSS 页面…</p></div>
+    </section>
+    <div id="feedback" role="status" aria-live="polite" hidden></div>
+    <button id="retry" class="secondary" hidden>重试</button>
+    <section aria-labelledby="pad-title">
+      <div class="section-top">
+        <h2 id="pad-title">打招呼话术</h2>
+        <div class="pad-actions">
+          <label class="switch" title="复制话术后收起侧栏，保留页面悬浮条">
+            <span>复制后收起侧栏</span>
+            <input id="pad-collapse" type="checkbox" role="switch" aria-label="复制话术后收起侧栏，保留页面悬浮条">
+            <span class="switch-track" aria-hidden="true"></span>
+          </label>
+          <button id="pad-copy" type="button" disabled>复制话术</button>
+          <span id="pad-collapse-status" class="pad-setting-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <label for="pad-text" class="sr-only">编辑打招呼话术，仅在本机保存</label>
+      <textarea id="pad-text" placeholder="在这里写下常用话术，可对照职位自由修改…" spellcheck="false" disabled></textarea>
+      <div class="pad-meta"><span id="pad-status" role="status" aria-live="polite">正在读取话术…</span><button id="pad-retry" class="text-button" hidden>重试保存</button></div>
+      <p id="pad-copy-status" role="status" aria-live="polite"></p>
+    </section>
+    <section aria-labelledby="jobs-title">
+      <div class="section-top"><h2 id="jobs-title">岗位采集 <span id="jobs-state">读取中</span></h2><div class="capture-export"><button id="jobs-export-session" class="text-button" type="button" disabled>导出本次</button><button id="jobs-export" class="text-button" type="button" disabled>导出全部</button></div></div>
+      <div class="capture-actions"><button id="jobs-toggle" type="button" disabled>开始采集本页</button><button id="jobs-retry" class="secondary" type="button" hidden>重试当前岗位</button><button id="jobs-refresh" class="text-button" type="button" hidden>重试读取</button></div>
+      <p id="jobs-count" class="muted">正在读取采集记录…</p>
+      <p id="jobs-note" class="capture-note" role="status" aria-live="polite"></p>
+    </section>
+    <section aria-labelledby="records-title">
+      <div class="section-top"><h2 id="records-title">我的记录 <span id="record-count">0</span></h2><button id="export" class="text-button" disabled>导出 CSV</button></div>
+      <label for="search" class="sr-only">搜索已记录公司</label>
+      <input id="search" type="search" placeholder="搜索已记录的公司" autocomplete="off">
+      <div id="record-list" aria-live="polite"><p class="muted">正在读取记录…</p></div>
+      <button id="records-toggle" class="text-button" hidden aria-expanded="false">展开全部</button>
+    </section>
+  </main>
+  <footer>记录仅保存在本机 · 未记录/未沟通 ≠ 从未沟通过<br>版本 <span id="version"></span> · 发起沟通后发出消息自动记录；记录中可手动标记或取消已沟通，保留已查看记录</footer>
+</body>
+</html>

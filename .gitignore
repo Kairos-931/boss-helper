@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.log
+temp-evidence/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+coverage/
