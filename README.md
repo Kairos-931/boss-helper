@@ -22,6 +22,8 @@
 
 ## 快速开始
 
+也可以从 [GitHub Releases](../../releases) 下载打包好的 `boss-helper-v0.22.3.zip`，解压后按下面步骤加载。
+
 ### 方式一：加载扩展
 
 1. 打开 Chrome，进入 `chrome://extensions`。
